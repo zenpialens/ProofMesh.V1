@@ -1,0 +1,5 @@
+{
+  "name": "ProofMesh.V1",
+  "description": "ProofMesh is a universal proof layer for AI-generated and human-generated content. It verifies the origin, authenticity, and modification history by anchoring proofs of content to the Hedera Consensus Service, creating a transparent and trustworthy digital provenance chain.",
+  "requestFramePermissions": []
+}
