@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Proof } from '../types';
 
 interface ProofDetailModalProps {
@@ -17,6 +17,18 @@ const DetailRow = ({ label, value, isHash }: { label: string; value?: string; is
 };
 
 const ProofDetailModal = ({ proof, onClose }: ProofDetailModalProps) => {
+  useEffect(() => {
+    if (!proof) return;
+    
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [onClose, proof]);
+
   if (!proof) return null;
 
   return (

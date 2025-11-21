@@ -13,7 +13,7 @@ const TypeIcon = ({ type }: {type: 'image' | 'text'}) => {
     return <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm2 1h1v1H6V5zm2 0h1v1H8V5zm2 0h1v1h-1V5zm-2 2h1v1H8V7zm2 0h1v1h-1V7zm-2 2h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1z" clipRule="evenodd" /></svg>
 }
 
-const ProofCard = ({ proof, onSelectProof }: ProofCardProps) => {
+const ProofCard: React.FC<ProofCardProps> = ({ proof, onSelectProof }) => {
   const creationDate = new Date(proof.provenance[0].timestamp);
   
   return (
